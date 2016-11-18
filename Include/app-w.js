@@ -277,7 +277,7 @@ $(function(){
     // MESSAGE
     function showErrorMessage() {
         console.log(meta.message.error);
-        $msg.append('<div class="inner-message">' + meta.message.error + '</div>').addClass('msg-error');
+        $msg.append('<div class="error-message">' + meta.message.error + '</div>').addClass('msg-error');
     }
 
     function hideErrorMessage() {

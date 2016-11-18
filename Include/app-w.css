@@ -232,19 +232,21 @@ h2 {
 }
 
 .msg {
-    padding: 14px 20px;
-    font-size: 12px;
-    line-height: 12px;
-    letter-spacing: 0.03em;
-}
-.msg-s {
-    font-size: 13px;
+    display: none;
 }
 .msg.msg-error {
-    background: #ff004d;
-    color: #fff;
+    display: block;
 }
-
+.msg.msg-error .error-message {
+    background: rgba(255, 0, 77, 0.64);
+    color: #fff;
+    padding: 18px 40px;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.03em;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
 .ui-text-checkbox {
     display: -webkit-box;
     display: -ms-flexbox;
