@@ -236,16 +236,20 @@ h2 {
 }
 .msg.msg-error {
     display: block;
+    position: relative;
 }
 .msg.msg-error .error-message {
-    background: rgba(255, 0, 77, 0.64);
+    background: rgb(255, 0, 77);
     color: #fff;
-    padding: 18px 40px;
+    padding: 14px 23px;
     font-size: 12px;
     line-height: 14px;
     letter-spacing: 0.03em;
-    margin-bottom: 15px;
     border-radius: 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 8px;
+    left: 0px;
 }
 .ui-text-checkbox {
     display: -webkit-box;

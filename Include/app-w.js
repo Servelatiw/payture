@@ -276,7 +276,6 @@ $(function(){
 
     // MESSAGE
     function showErrorMessage() {
-        console.log(meta.message.error);
         $msg.append('<div class="error-message">' + meta.message.error + '</div>').addClass('msg-error');
     }
 
@@ -321,12 +320,12 @@ $(function(){
                     caretPosition--;
                 }
             }
-              caretPosition += Math.floor(caretPosition / 4);
-              if ((caretPosition != 5) && (caretPosition != 10) && (caretPosition != 15)  && (caretPosition != 20)) {
-                //set
-                this.value = this.lastValue = partsArray.join(' ');
-                this.selectionStart = this.selectionEnd = caretPosition;
-              }
+            caretPosition += Math.floor(caretPosition / 4);
+
+            //set
+            this.value = this.lastValue = partsArray.join(' ');
+            this.selectionStart = this.selectionEnd = caretPosition;
+
             //set
             card.number.value = card.number.value = str.replace(/\D/g,'');
             setPaymentSystem();
