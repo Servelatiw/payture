@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Оплата банковской картой Рамблер-Касса</title>
+
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="ROBOTS" content="NONE">
+
+  <link href="Include/reset.css" rel="stylesheet" >
+  <link href="Include/grid.css" rel="stylesheet" >
+  <link href="Include/media.css" rel="stylesheet" >
+  <link href="Include/app-w.css" rel="stylesheet" >
+  <link href="https://fonts.googleapis.com/css?family=Roboto&subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+</head>
+<body ontouchstart="">
+
+<div class="form-wrap">
+    <form name="pay-form" id="pay-form" class="form" action="PaySubmit" method="POST" novalidate>
+
+        <h1>Оплата<br>банковской картой</h1>
+
+        <div class="card-data">
+            <h2>Введите данные карты</h2>
+            <div class="msg" id="msg"></div>
+            <div class="ui-text-field ui-text-field--ccn js-saved-card"><!-- type-visa -->
+                <div id="saved-credit-card-number" class="ui-text-field--txt"></div>
+                <div class="ui-text-field--icon"></div>
+            </div>
+            <div class="ui-text-field ui-text-field--ccn js-free-pay">
+                <input id="credit-card-number"
+                       type="tel"
+                       required
+                       placeholder="Номер карты"
+                       value=""
+                       autocomplete="off"
+                       spellcheck="false"
+                       maxlength="23"
+                />
+                <div class="ui-text-field--icon"></div>
+            </div>
+            <div class="grid">
+                <div class="grid-cell js-free-pay">
+                    <div class="ui-text-field ui-text-field--date">
+                        <input id="credit-card-exp-date"
+                               type="tel"
+                               required
+                               placeholder="ММ / ГГ"
+                               value=""
+                               autocomplete="off"
+                               spellcheck="false"
+                               maxlength="7"
+                        />
+                    </div>
+                </div>
+                <div class="grid-cell">
+                    <div class="ui-text-field ui-text-field--code">
+                        <input id="credit-card-cvc"
+                               type="tel"
+                               required
+                               placeholder="CVC"
+                               value=""
+                               autocomplete="off"
+                               spellcheck="false"
+                               maxlength="4"
+                        />
+                        <div class="ui-text-field--icon"></div>
+                    </div>
+                </div>
+                <div class="ssl-proof">Защищено сертификатом SSL. Сайт полностью отвечает  стандартам безопасности Visa и&nbsp;MasterCard.</div>
+            </div>
+        </div>
+
+        <div class="ui-text-checkbox">
+            <div class="ui-text-checkbox--input js-free-pay">
+                <input id="credit-card-save"
+                       type="checkbox"
+                       checked
+                />
+                <label for="credit-card-save"></label>
+            </div>
+            <div class="ui-text-checkbox--label">
+                <label id="credit-card-save-label" for="credit-card-save">Сохранить данные банковской карты для следующих покупок</label>
+            </div>
+        </div>
+
+        <div class="ui-btn-container">
+            <input id="submit-btn"
+                   class="ui-submit"
+                   type="submit"
+                   value="Оплатить {TotalAmountDescription}"
+                   disabled
+            >
+        </div>
+
+        <div class="legal">Нажимая кнопку &laquo;Оплатить&raquo;,<br> вы соглашаетесь с&nbsp;<a class="legal-link" href="#" target="_blank">условиями покупки</a>.</div>
+
+        <select id="credit-card-select" name="credit-card-select">
+            <option value="FreePay"></option>
+            <!--<option value="123456789" selected="selected">VISA **1234</option>-->
+            {cards}
+        </select>
+
+    </form>
+</div>
+
+<script type="text/javascript">
+    var meta = {
+        key: '{key}',
+        orderKey: '{OrderKey}',
+        discountUrl: '{DiscountUrl}',
+        allowDiscount: '{AllowDiscount}',
+        total: 0,
+        curTotalAmount: '{TotalAmount}',
+        initTotalAmount: '{TotalAmount}',
+        message: {
+            ok: 'Оплата банковской картой',
+            error: 'К сожалению, в настоящее время платеж с данной карты невозможен. Пожалуйста, свяжитесь со своим банком и попробуйте еще раз, либо воспользуйтесь другой картой'
+        },
+        discountAmount: '{DiscountAmount}',
+        discountDescription: '{DiscountDescription}',
+        noDiscountDescription: 'Сохранить данные банковской карты для следующих покупок',
+        allowAddCard: true,
+        redirectUrl: '{TimerRedirectUrl}' //'http://mapp.kassa.rambler.ru/order/error?code=timeout&message=Время для оплаты истекло. Начните покупку заново&WidgetID=16857#timeout=true'
+    };
+</script>
+<script src="Include/jquery-2.2.3.min.js"></script>
+<script src="Include/app-w.js"></script>
+</body>
+</html>

@@ -1,0 +1,327 @@
+* { font-family:Arial, Helvetica, sans-serif; margin:0; padding:0;}
+
+h2{
+    font-size:20px;
+    margin-bottom:15px; 
+}
+.container{
+    margin:50px auto;
+    width:510px;
+}
+.card {
+    background:url(images/card.png) no-repeat top left;
+    height:215px;
+    margin:0 auto 15px;
+    padding:20px;
+    position:relative;
+    width:460px;
+}
+        
+input[type="text"]{
+    border:1px solid #cccccc;
+    border-top-color:#999999;
+    border-radius:4px;
+    display:inline-block;
+    text-align:center;
+    text-transform:uppercase;
+}
+input:focus, button:focus{
+    outline:none;
+}
+
+.label{
+    display:inline-block;
+    font-size:10px;
+    line-height:12px;
+    text-transform:uppercase;
+}
+
+.text{
+    background:#FFFFFF;
+    border:1px solid #cccccc;
+    border-top-color:#999999;
+    border-radius:3px;
+    box-shadow:0 1px 1px #FFFFFF;
+    padding:1px 4px 1px 0;
+}
+.mask{
+    display:inline-block;
+    padding:2px 4px 1px 0;
+    text-align:center;
+}
+
+.clear{
+    float:none;
+    clear:both;
+}
+
+.error {
+    display:none;
+    position:absolute;
+    top:-105%;
+}
+.error span{
+    background:#ff2f2f;
+    color:#ffffff;
+    font-size:12px;
+    line-height:22px;
+    border-radius:11px;
+    padding:3px 10px;
+    white-space:nowrap;
+}
+.error .arr{
+    border-top:4px solid #FF2F2F;
+    border-left:4px solid transparent;
+    border-right:4px solid transparent;
+    position:absolute;
+    bottom:-3px;
+    left:30px;
+    width:0px;
+    height:0;
+}
+
+#errorTop{
+    color:#FF2F2F;
+    margin-bottom:20px;
+}
+
+
+
+table{
+    border-collapse:collapse;
+    margin-bottom:50px;
+    width:100%;
+}
+table th{
+    border-bottom:1px solid #DCDCDC;
+    padding:5px 0;
+}
+table td{
+    padding:5px 0;
+}
+
+
+
+
+.selectCard {
+    margin-bottom:15px;
+    text-align:center;
+}
+.selectCard *{
+    font-size:12px;
+}
+
+
+
+
+#CardType{
+    margin-left:190px;
+    height:33px;
+    width:75px;
+}
+#CardType > div {
+    background:url(images/cardtype.png) no-repeat top;
+    display:none;
+    height:33px;
+    width:70px;
+}
+#CardType .visa{
+    background-position:top;
+    height:23px;
+}
+#CardType .master{
+    background-position:bottom;
+}
+
+
+
+
+#CardNumber{
+    margin:23px 0 3px;
+    position:relative; 
+    width:260px;
+}
+
+#CardNumber .text input{
+    background:#FFFFFF;
+    border:none;
+    border-radius:0;
+    font-size:18px; 
+    margin-left:5px;
+    padding:0;
+    width:53px;
+}
+#CardNumber .mask{
+    border:none;
+    font-size:18px; 
+    margin-left:5px;
+    width:52px;
+}
+
+
+
+
+#ExpiredDate {
+    margin-bottom:10px;
+    position:relative;
+    width:190px;
+}
+#ExpiredDate .error{
+    top:-14%;
+    left:60px;
+}
+#ExpiredDate .label{
+    width:50px;
+}
+#ExpiredDate .month{
+    margin-left:75px;
+}
+#ExpiredDate .valid{
+    float:left;
+    margin-right:5px;
+    text-align:right;
+    width:70px;
+}
+#ExpiredDate .separator{
+    font-size:16px;
+}
+#ExpiredDate input{
+    width:30px;
+}
+#ExpiredDate .mask{
+    width:30px;
+}
+
+
+
+
+#CardHolder{
+    position:relative;
+    width:260px;
+}
+#CardHolder .error{
+    top:auto;
+    bottom:-105%;
+}
+#CardHolder .error .arr{
+    border-bottom:4px solid #FF2F2F;
+    border-top:none;
+    top:-3px;
+}
+#CardHolder input{
+    text-align:left;
+    width:250px;
+}
+#CardHolder .mask{
+    padding-left:10px;
+}
+
+
+
+#CVV, #CVV2{
+    position:absolute;
+    top:115px;
+    left:375px;
+}
+#CVV .error, #CVV2 .error{
+    top:-12%;
+    left:30px;
+}
+#CVV .label, #CVV2 .label{
+    margin:0 0 5px 55px;
+}
+#CVV .label.info, #CVV2 .label.info{
+    text-transform:none;
+    margin:5px 0 0;
+}
+#CVV .numbers, #CVV2 .numbers{
+    float:left;
+    line-height:24px;
+    margin:0 5px 0 10px;
+}
+#CVV input, #CVV2 input{
+    width:40px;
+}
+
+#addCard {
+    font-size:12px;
+    position:absolute;
+    top:217px;
+    left:220px;
+}
+#addCard input{
+    margin-right:5px;
+}
+
+#Payture {
+    background:url(images/paytureLogo.png) no-repeat center;
+    height:32px;
+    position:absolute;
+    top:204px;
+    left:409px;
+    width:74px;
+}
+
+.payBlock {
+    margin-bottom:30px;
+    text-align:center;
+}
+
+
+
+
+.text.wrong{
+    border:1px solid #ff2f2f;
+    border-top-color:#de0b0b;
+    box-shadow:0 0 4px rgba(255,47,47,0.75);
+}
+.text.right{
+    border:1px solid #3eda3e;
+    border-top-color:#029602;
+    box-shadow:0 0 4px rgba(62,218,62,0.75);
+}
+
+button{
+    background-color:#21bc21;
+    background-image:linear-gradient(top, #45da45, #05a605);
+    background-image:-o-linear-gradient(top, #45da45, #05a605);
+    background-image:-moz-linear-gradient(top, #45da45, #05a605);
+    background-image:-webkit-linear-gradient(top, #45da45, #05a605);
+    background-image:-ms-linear-gradient(top, #45da45, #05a605);
+    border:none;
+    border-radius:20px;
+    box-shadow:0 1px 2px rgba(0,0,0,0.4);
+    color:#FFFFFF;
+    cursor:pointer;
+    font-size:16px;
+    position:relative;
+    padding:5px 15px;
+    text-shadow:0 -1px 0 rgba(0,0,0,0.4);
+}
+button:after{
+    background:rgba(255,255,255,0.2);
+    border-radius:10px;
+    content:"";
+    height:18px;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+}
+button:hover{
+    background-color:#21bc21;
+    background-image:linear-gradient(top, #45da45, #0e960e);
+    background-image:-o-linear-gradient(top, #45da45, #0e960e);
+    background-image:-moz-linear-gradient(top, #45da45, #0e960e);
+    background-image:-webkit-linear-gradient(top, #45da45, #0e960e);
+    background-image:-ms-linear-gradient(top, #45da45, #0e960e);
+}
+button.disable{
+    background-color:#d0d0d0;
+    background-image:linear-gradient(top, #dcdcdc, #a4a4a4);
+    background-image:-o-linear-gradient(top, #dcdcdc, #a4a4a4);
+    background-image:-moz-linear-gradient(top, #dcdcdc, #a4a4a4);
+    background-image:-webkit-linear-gradient(top, #dcdcdc, #a4a4a4);
+    background-image:-ms-linear-gradient(top, #dcdcdc, #a4a4a4);
+    cursor:default;
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="18px" height="25px" viewBox="0 0 18 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 6</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Сцена-4.-Выбор-способа-платы-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="UC-2.2.1.2-Форма-оплаты-картой-(заполненная)" transform="translate(-459.000000, -475.000000)">
+            <g id="Group-3" transform="translate(420.000000, 261.000000)">
+                <g id="Group-6" transform="translate(40.000000, 215.000000)">
+                    <rect id="Rectangle-375-Copy-3" stroke="#FFFFFF" stroke-width="1.5" x="0" y="7" width="16" height="16" rx="8"></rect>
+                    <path d="M3,9 L3,5.11796602 C3,2.29139144 5.24419519,0 8,0 C10.7614237,0 13,2.29499317 13,5.11796602 L13,9" id="Rectangle-375-Copy-4" stroke="#FFFFFF" stroke-width="1.5"></path>
+                    <g id="Group-5" transform="translate(6.000000, 12.000000)" fill="#FFFFFF">
+                        <circle id="Oval-12" cx="2" cy="2" r="2"></circle>
+                        <rect id="Rectangle" x="1" y="2" width="2" height="5" rx="1"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

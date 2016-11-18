@@ -1,0 +1,307 @@
+html {
+    width: 100%;
+    height: 100%;
+
+    -webkit-text-size-adjust: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    min-width: 320px; /* iphone */
+    height: 100%;
+    background: transparent;
+    font-family: "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+    font-weight:400;
+    font-size: 16px;
+    line-height: 21px;
+    color:#000;
+    -webkit-text-size-adjust: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    align-items: center;
+    justify-content: center;
+
+    /*background: #4c515b;*/
+    /*background: url(img/payture-form.png) no-repeat 0 0;*/
+    /*background: url(img/payture-form-save-card.png) no-repeat 0 0;*/
+    /*padding: 93px 0 0;*/
+}
+
+html, body, input, textarea, * {
+    -webkit-user-select: text !important;
+    user-select: text !important;
+    /*
+    -webkit-user-callout: none !important;
+    -webkit-touch-callout: none !important;
+    */
+}
+
+input:-ms-clear {
+    display: none;
+}
+
+h1,h2,h3,h4,h5 {
+    /*font-family: "HelveticaNeueMedium", "HelveticaNeue-Medium", "Helvetica Neue Medium", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+    font-weight:500;*/
+    font-family: "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+    font-weight:400;
+    font-size: 17px;
+    line-height: 21px;
+    color: #fff;
+}
+
+.form-wrap {
+    margin: 0 auto;
+    max-width: 440px;
+}
+
+.form {}
+
+h1 {
+    margin: 0 0 20px;
+    font-size: 27px;
+    line-height: 33px;
+    font-weight: normal;
+    text-align: center;
+    letter-spacing: 0.055em;
+    color: #fff;
+}
+
+h2 {
+    margin: 0 0 15px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 22px;
+    letter-spacing: 0.045em;
+    color: #fff;
+}
+
+.ssl-proof {
+    padding: 4px 0 0 26px;
+    background: url(img/ico-padlock.svg) no-repeat 0 5px;
+    font-size: 11px;
+    line-height: 15px;
+    color: #fff;
+}
+
+.legal {
+    font-size: 11px;
+    line-height: 14px;
+    letter-spacing: 0.053em;
+    text-align: center;
+    color: rgba(255,255,255,.6);
+}
+.legal-link {
+    color: rgba(255,255,255,.6);
+}
+
+.card-data {
+    /*margin: 0 0 34px;*/
+    padding: 35px 40px;
+    background-image: linear-gradient(228deg, rgba(121, 126, 143, 0.5), rgba(64, 67, 77, 0.5));
+    border-radius: 10px;
+}
+
+/*
+@media (min-width: 576px) {
+    .form {
+        margin-top: 15px;
+    }
+}
+*/
+.help-block {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+    box-sizing: border-box;
+}
+.ui-text-field {
+    position: relative;
+    box-sizing: border-box;
+    margin: 0 0 22px;
+    width: 100%;
+}
+.ui-text-field input,
+.ui-text-field .ui-text-field--txt {
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 4px 23px;
+    width: 100%;
+    height: 46px;
+    background: #fff;
+    border: none;
+    border-radius: 100px;
+    outline: none;
+
+    font-size: 17px;
+    line-height: 22px;
+    font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+    font-weight: 300;
+    font-stretch: normal;
+    color: rgb(96,96,96);
+}
+.ui-text-field .ui-text-field--txt {
+    padding:  12px 17px;
+}
+.ui-text-field input:focus {
+    background: #fff;
+    /*border: 2px solid #4bb7ff;*/
+    outline: none;
+}
+.ui-text-field input.ui-error {
+    color: #e84055;
+}
+.ui-text-field--date {
+    padding: 0 15px 0 0;
+}
+.ui-text-field--icon {
+    position: absolute;
+    top: 0px;
+    right: 9px;
+    width: 72px;
+    height: 48px;
+    background: url(img/ico-payment.png) no-repeat 72px 0;
+    background-size: 446px 48px;
+    pointer-events: none;
+}
+.ui-text-field--code .ui-text-field--icon {
+    background-position: 0px 0;
+}
+.type-visa .ui-text-field--icon {
+    background-position: -72px 0;
+}
+.type-mastercard .ui-text-field--icon {
+    background-position: -144px 0;
+}
+.type-maestro .ui-text-field--icon {
+    background-position: -216px 0;
+}
+.type-mir .ui-text-field--icon {
+    background-position: -375px 0;
+}
+
+.ui-btn-container {
+    margin: 35px 0 16px;
+    padding: 0 40px;
+}
+
+.ui-submit {
+    -webkit-appearance: inherit;
+    box-sizing: border-box;
+    padding: 0 32px;
+    width: 100%;
+    height: 55px;
+    background: #0d76ff;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    color: #fff;
+    font-family: "Roboto", "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+    /* text-transform: uppercase; */
+}
+.ui-submit:hover {}
+.ui-submit:disabled {
+    background: rgba(7, 54, 131, 0.7);
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.msg {
+    /*padding: 10px 20px;*/
+    padding: 0;
+    font-size: 17px;
+    letter-spacing: 0.03em;
+}
+.msg-s {
+    font-size: 14px;
+}
+.msg.msg-error {
+    background: #e84055;
+    color: #fff;
+}
+
+.ui-text-checkbox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    box-sizing: border-box;
+    margin: 12px 0 0;
+    padding: 0 40px;
+    width: 100%;
+    font-size: 11px;
+    line-height: 11px;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+    color: #fff;
+}
+.ui-text-checkbox--input {
+    display: flex;
+    flex: 0;
+    align-self: flex-start;
+    padding: 0 6px 0 0;
+    position: relative;
+    width: 100%;
+}
+
+.ui-text-checkbox--input input[type=checkbox] {
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+    width: 22px;
+    height: 22px;
+}
+
+.ui-text-checkbox--input label {
+    position: absolute;
+    top: 1px;
+    left: 0;
+
+    width: 22px;
+    height: 22px;
+
+    background: url(img/checkbox-white.png) no-repeat 0 0;
+    background-size: 44px 22px;
+    /*border-radius: 3px;*/
+    cursor: pointer;
+}
+
+.ui-text-checkbox--input input[type=checkbox]:checked + label {
+    background-position: -22px 0;
+}
+
+
+.ui-text-checkbox--label {
+    display: flex;
+    flex: 1;
+    white-space: normal;
+}
+.ui-text-checkbox--label b {
+    font-weight:700;
+}
+
+.ui-text-field--ccn input,
+.ui-text-field--ccn .ui-text-field--txt {
+    padding-right: 85px;
+}
+.ui-text-field--code input {
+    padding-right: 85px;
+}
+
+#credit-card-select {
+    display: none;
+}
