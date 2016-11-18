@@ -276,6 +276,7 @@ $(function(){
 
     // MESSAGE
     function showErrorMessage() {
+        console.log(meta.message.error);
         $msg.append('<div class="error-message">' + meta.message.error + '</div>').addClass('msg-error');
     }
 
@@ -304,10 +305,20 @@ $(function(){
                 partsArray,
                 withSpacesString,
                 partsArrayMaxLength,
-                caretPosition = this.selectionStart;
+                caretPosition = this.selectionStart,
+                evtType;
+                console.log(caretPosition);
+                if (caretPosition == 0) {caretPosition = 1}
+
+            if (event.type == 'paste') {
+                evtType = 'paste';
+                console.log('paste || paste');
+            }
 
             if (this.value == this.lastValue) return;
-             var str = event.target.value,
+            console.log('==-=-=-=-=-=-=-=');
+            console.log(event.target.value);
+            var str = event.target.value,
                 strOnlyDigits = str.replace(/\D/g,''),
                 partsArray = [],
                 caretPosition = this.selectionStart;
@@ -320,12 +331,14 @@ $(function(){
                     caretPosition--;
                 }
             }
-            caretPosition += Math.floor(caretPosition / 4);
-
-            //set
-            this.value = this.lastValue = partsArray.join(' ');
-            this.selectionStart = this.selectionEnd = caretPosition;
-
+                console.log(partsArray);
+                caretPosition += Math.floor(caretPosition / 4);
+                if (((caretPosition != 5) && (caretPosition != 10) && (caretPosition != 15)  && (caretPosition != 20)) || (evtType =='paste')) {
+                    //set
+                    this.value = this.lastValue = partsArray.join(' ');
+                    this.selectionStart = this.selectionEnd = caretPosition;
+                    evtType =='';
+                }
             //set
             card.number.value = card.number.value = str.replace(/\D/g,'');
             setPaymentSystem();
