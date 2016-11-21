@@ -330,7 +330,6 @@ $(function(){
                 //var checkNumber = (!Number.isInteger(parseInt(this.value[caretPosition])) || !Number.isInteger(parseInt(this.value[caretPosition - 1])));
 
                 var checkNumber = (isNumber(parseInt(this.value[caretPosition])) || isNumber(parseInt(this.value[caretPosition - 1])));
-                console.log(checkNumber);
 
                 if (((caretPosition != 5) && (caretPosition != 10) && (caretPosition != 15)  && (caretPosition != 20)) || (checkNumber == false)) {
                     //set
@@ -384,11 +383,11 @@ $(function(){
     // CARD EXP DATE
 
     $cardCardExpDateInput
-        .on("keypress", function(evt) {
+        /*.on("keypress", function(evt) {
             if (evt.which < 48 || evt.which > 57) {
                 evt.preventDefault();
             }
-        })
+        })*/
         .on("focus", function() {
             $(this).removeClass('ui-error');
             hideErrorMessage();
@@ -466,11 +465,11 @@ $(function(){
     // CARD CVC,CVV
 
     $cardCvcInput
-        .on("keypress", function(evt) {
+        /*.on("keypress", function(evt) {
             if (evt.which < 48 || evt.which > 57) {
                 evt.preventDefault();
             }
-        })
+        })*/
         .on("focus", function() {
             $(this).removeClass('ui-error');
             hideErrorMessage();
@@ -557,7 +556,7 @@ $(function(){
             //console.log(dataString);
 
             var form = document.getElementsByTagName('form')[0];
-                console.log(form);
+                //console.log(form);
                 hiddenField = document.createElement('input');
 
             form.setAttribute("method", $(this).attr('method'));
