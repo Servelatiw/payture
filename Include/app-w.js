@@ -297,7 +297,7 @@ $(function(){
             $(this).removeClass('ui-error');
             hideErrorMessage();
         })
-        .on("change paste keyup", function(event) {
+        .on("paste keyup", function(event) {
             //console.log(event.target.value + '|' + event.target.value.length);
 
             var str = event.target.value,
@@ -309,11 +309,6 @@ $(function(){
                 evtType;
                 console.log(caretPosition);
                 if (caretPosition == 0) {caretPosition = 1}
-
-            if (event.type == 'paste') {
-                evtType = 'paste';
-                console.log('paste || paste');
-            }
 
             if (this.value == this.lastValue) return;
             console.log('==-=-=-=-=-=-=-=');
