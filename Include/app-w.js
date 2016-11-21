@@ -316,14 +316,23 @@ $(function(){
                 partsArray.push(strOnlyDigits.substring(i, i + 4));
             }
             for (var i = caretPosition - 1; i >= 0; i--) {
-                var c = this.value[i].replace(/\D/g,'');
+                var c = this.value[i];
                 if (c < '0' || c > '9' ) {
-                    console.log('c 0-9');
                     caretPosition--;
                 }
             }
                 caretPosition += Math.floor(caretPosition / 4);
-                if (((caretPosition != 5) && (caretPosition != 10) && (caretPosition != 15)  && (caretPosition != 20)) || (evtType =='paste')) {
+
+                console.log('----=--=---=====------');
+                console.log(caretPosition);
+
+                console.log(this.value[caretPosition]);
+                console.log(Number.isInteger(parseInt(this.value[caretPosition])));
+
+                var checkNumber = Number.isInteger(parseInt(this.value[caretPosition]))
+
+
+                if (((caretPosition != 5) && (caretPosition != 10) && (caretPosition != 15)  && (caretPosition != 20)) || (evtType =='paste') || (checkNumber == false)) {
                     //set
                     this.value = this.lastValue = partsArray.join(' ');
                     this.selectionStart = this.selectionEnd = caretPosition;
@@ -331,6 +340,8 @@ $(function(){
                 }
             //set
             card.number.value = str.replace(/\D/g,'');
+            console.log('=============str')
+            console.log(str.replace(/\D/g,''));
             setPaymentSystem();
 
             $(this).parent().removeClass('type-mastercard type-visa type-maestro type-mir type-invalid').addClass('type-' + card.system);
