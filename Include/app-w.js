@@ -298,21 +298,16 @@ $(function(){
             hideErrorMessage();
         })
         .on("paste keyup", function(event) {
-            console.log('-----');
-            console.log(event.target.value);
-
-            var str = event.target.value,
+            var str = event.target.value.replace(/\D/g,''),
                 strOnlyDigits = str.replace(/\D/g,''),
                 partsArray,
                 withSpacesString,
                 partsArrayMaxLength,
                 caretPosition = this.selectionStart,
                 evtType;
-                console.log(caretPosition);
                 if (caretPosition == 0) {caretPosition = 1}
 
             if (this.value == this.lastValue) return;
-            console.log(event.target.value);
             var str = event.target.value.replace(/\D/g,''),
                 strOnlyDigits = str.replace(/\D/g,''),
                 partsArray = [],
@@ -321,12 +316,12 @@ $(function(){
                 partsArray.push(strOnlyDigits.substring(i, i + 4));
             }
             for (var i = caretPosition - 1; i >= 0; i--) {
-                var c = this.value[i];
+                var c = this.value[i].replace(/\D/g,'');
                 if (c < '0' || c > '9' ) {
+                    console.log('c 0-9');
                     caretPosition--;
                 }
             }
-                console.log(partsArray);
                 caretPosition += Math.floor(caretPosition / 4);
                 if (((caretPosition != 5) && (caretPosition != 10) && (caretPosition != 15)  && (caretPosition != 20)) || (evtType =='paste')) {
                     //set
@@ -335,7 +330,7 @@ $(function(){
                     evtType =='';
                 }
             //set
-            card.number.value = card.number.value = str.replace(/\D/g,'');
+            card.number.value = str.replace(/\D/g,'');
             setPaymentSystem();
 
             $(this).parent().removeClass('type-mastercard type-visa type-maestro type-mir type-invalid').addClass('type-' + card.system);
