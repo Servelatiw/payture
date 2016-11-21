@@ -276,7 +276,7 @@ $(function(){
 
     // MESSAGE
     function showErrorMessage() {
-        console.log(meta.message.error);
+        //console.log(meta.message.error);
         $msg.append('<div class="error-message">' + meta.message.error + '</div>').addClass('msg-error');
     }
 
@@ -322,25 +322,7 @@ $(function(){
             }
                 caretPosition += Math.floor(caretPosition / 4);
 
-                console.log('----=--=---=====------');
-
-
-                //console.log(this.selectionStart);
-                //console.log(this.selectionEnd);
-
-                console.log('----=--=---=====------');
-
-                console.log('position: ' + caretPosition);
-                console.log('value: ' + this.value[caretPosition]);
-                console.log('value - 1: ' + this.value[caretPosition - 1]);
-
-                //console.log(this.value[caretPosition]);
-                //console.log(Number.isInteger(parseInt(this.value[caretPosition])));
-
                 var checkNumber = (!Number.isInteger(parseInt(this.value[caretPosition])) || !Number.isInteger(parseInt(this.value[caretPosition - 1])));
-                console.log('CHECK: ' + checkNumber);
-
-
 
                 if (((caretPosition != 5) && (caretPosition != 10) && (caretPosition != 15)  && (caretPosition != 20)) || (checkNumber)) {
                     //set
@@ -349,8 +331,6 @@ $(function(){
                 }
             //set
             card.number.value = str.replace(/\D/g,'');
-            console.log('=============str')
-            console.log(str.replace(/\D/g,''));
             setPaymentSystem();
 
             $(this).parent().removeClass('type-mastercard type-visa type-maestro type-mir type-invalid').addClass('type-' + card.system);
@@ -498,6 +478,8 @@ $(function(){
             // validate
             isCardCvcValid(card.code.value);
             enableSubmitButton(isCardValid());
+
+            this.value = str.replace(/\D/g,'');
         })
         .on("blur", function(event) {
             var str = event.target.value;
