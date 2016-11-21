@@ -75,7 +75,7 @@ function isCardExpDateValid(value) {
 }
 
 function isCardCvcValid(value) {
-    var cvcRegExp = /^[0-9]{3,4}$/;
+    var cvcRegExp = /^[0-9]{3}$/;
 
     card.code.isValid = cvcRegExp.test(value);
     return card.code.isValid;
@@ -297,8 +297,9 @@ $(function(){
             $(this).removeClass('ui-error');
             hideErrorMessage();
         })
-        .on("paste keyup", function(event) {
-            //console.log(event.target.value + '|' + event.target.value.length);
+        .on("paste keydown", function(event) {
+            console.log('-----');
+            console.log(event.target.value);
 
             var str = event.target.value,
                 strOnlyDigits = str.replace(/\D/g,''),
@@ -311,9 +312,8 @@ $(function(){
                 if (caretPosition == 0) {caretPosition = 1}
 
             if (this.value == this.lastValue) return;
-            console.log('==-=-=-=-=-=-=-=');
             console.log(event.target.value);
-            var str = event.target.value,
+            var str = event.target.value.replace(/\D/g,''),
                 strOnlyDigits = str.replace(/\D/g,''),
                 partsArray = [],
                 caretPosition = this.selectionStart;
@@ -432,6 +432,8 @@ $(function(){
                 }
 
                 str = withSpacesString;
+
+                console.log(str);
             }
 
             // set
