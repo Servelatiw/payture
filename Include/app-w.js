@@ -303,8 +303,7 @@ $(function(){
                 partsArray,
                 withSpacesString,
                 partsArrayMaxLength,
-                caretPosition = this.selectionStart,
-                evtType;
+                caretPosition = this.selectionStart;
                 if (caretPosition == 0) {caretPosition = 1}
 
             if (this.value == this.lastValue) return;
@@ -324,19 +323,29 @@ $(function(){
                 caretPosition += Math.floor(caretPosition / 4);
 
                 console.log('----=--=---=====------');
-                console.log(caretPosition);
-
-                console.log(this.value[caretPosition]);
-                console.log(Number.isInteger(parseInt(this.value[caretPosition])));
-
-                var checkNumber = Number.isInteger(parseInt(this.value[caretPosition]))
 
 
-                if (((caretPosition != 5) && (caretPosition != 10) && (caretPosition != 15)  && (caretPosition != 20)) || (evtType =='paste') || (checkNumber == false)) {
+                //console.log(this.selectionStart);
+                //console.log(this.selectionEnd);
+
+                console.log('----=--=---=====------');
+
+                console.log('position: ' + caretPosition);
+                console.log('value: ' + this.value[caretPosition]);
+                console.log('value - 1: ' + this.value[caretPosition - 1]);
+
+                //console.log(this.value[caretPosition]);
+                //console.log(Number.isInteger(parseInt(this.value[caretPosition])));
+
+                var checkNumber = (!Number.isInteger(parseInt(this.value[caretPosition])) || !Number.isInteger(parseInt(this.value[caretPosition - 1])));
+                console.log('CHECK: ' + checkNumber);
+
+
+
+                if (((caretPosition != 5) && (caretPosition != 10) && (caretPosition != 15)  && (caretPosition != 20)) || (checkNumber)) {
                     //set
                     this.value = this.lastValue = partsArray.join(' ');
                     this.selectionStart = this.selectionEnd = caretPosition;
-                    evtType =='';
                 }
             //set
             card.number.value = str.replace(/\D/g,'');
