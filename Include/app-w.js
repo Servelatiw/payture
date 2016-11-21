@@ -297,7 +297,7 @@ $(function(){
             $(this).removeClass('ui-error');
             hideErrorMessage();
         })
-        .on("paste keydown", function(event) {
+        .on("paste keyup", function(event) {
             console.log('-----');
             console.log(event.target.value);
 
