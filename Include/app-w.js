@@ -117,6 +117,11 @@ function setPaymentSystem() {
     document.getElementById('credit-card-number').setAttribute('maxLength', maxLength);
 }
 
+function isNumber(num) {
+    return !isNaN(parseFloat(num)) && isFinite(num);
+}
+
+
 // Ready
 
 $(function(){
@@ -322,9 +327,12 @@ $(function(){
             }
                 caretPosition += Math.floor(caretPosition / 4);
 
-                var checkNumber = (!Number.isInteger(parseInt(this.value[caretPosition])) || !Number.isInteger(parseInt(this.value[caretPosition - 1])));
+                //var checkNumber = (!Number.isInteger(parseInt(this.value[caretPosition])) || !Number.isInteger(parseInt(this.value[caretPosition - 1])));
 
-                if (((caretPosition != 5) && (caretPosition != 10) && (caretPosition != 15)  && (caretPosition != 20)) || (checkNumber)) {
+                var checkNumber = (isNumber(parseInt(this.value[caretPosition])) || isNumber(parseInt(this.value[caretPosition - 1])));
+                console.log(checkNumber);
+
+                if (((caretPosition != 5) && (caretPosition != 10) && (caretPosition != 15)  && (caretPosition != 20)) || (checkNumber == false)) {
                     //set
                     this.value = this.lastValue = partsArray.join(' ');
                     this.selectionStart = this.selectionEnd = caretPosition;
@@ -425,10 +433,7 @@ $(function(){
                     // add delimiter
                     withSpacesString += delimiter;
                 }
-
                 str = withSpacesString;
-
-                console.log(str);
             }
 
             // set
