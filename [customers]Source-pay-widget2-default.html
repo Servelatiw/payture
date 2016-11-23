@@ -94,7 +94,7 @@
             >
         </div>
 
-        <div class="legal">Нажимая кнопку &laquo;Оплатить&raquo;,<br> вы соглашаетесь с&nbsp;<a class="legal-link" href="#" target="_blank">условиями покупки</a>.</div>
+        <div class="legal">Нажимая кнопку &laquo;Оплатить&raquo;,<br> вы соглашаетесь с&nbsp;<a class="legal-link" href="https://kassa.rambler.ru/oferta" target="_blank">пользовательским соглашением</a>.</div>
 
         <select id="credit-card-select" name="credit-card-select">
             <option value="FreePay"></option>
@@ -116,12 +116,12 @@
         initTotalAmount: '{TotalAmount}',
         message: {
             ok: 'Оплата банковской картой',
-            error: 'К сожалению, в настоящее время платеж с данной карты невозможен. Пожалуйста, свяжитесь со своим банком и попробуйте еще раз, либо воспользуйтесь другой картой'
+            error: '{error}'
         },
         discountAmount: '{DiscountAmount}',
         discountDescription: '{DiscountDescription}',
         noDiscountDescription: 'Сохранить данные банковской карты для следующих покупок',
-        allowAddCard: true,
+        allowAddCard: '{AllowAddToCard}',
         redirectUrl: '{TimerRedirectUrl}' //'http://mapp.kassa.rambler.ru/order/error?code=timeout&message=Время для оплаты истекло. Начните покупку заново&WidgetID=16857#timeout=true'
     };
 </script>
