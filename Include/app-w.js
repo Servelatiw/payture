@@ -158,12 +158,42 @@ $(function(){
         });
         // show form elements
         $('.js-saved-card').each(function(){
-            var savedCardClass = creditСardSelect.options[creditСardSelect.selectedIndex].text.split(' ')[0].toLowerCase();
+            var
+                savedCardStartNum = creditСardSelect.options[creditСardSelect.selectedIndex].text.substr(0,6),
+                savedCardLastNum = creditСardSelect.options[creditСardSelect.selectedIndex].text.substr(-4),
+                savedCardClass = '',
+                savedCardWord = 'Карта';
+
+            (function setSavedCardSystem(savedCardNum) {
+                console.log(savedCardNum);
+                var paymentSystem = '',
+                    maxLength;
+                    visaRegExp = /^4[0-9]{5,}$/, // 6
+                    mastercardRegExp = /^5[1-5][0-9]{4,}$/, // 5
+                    maestroRegExp = /^(5018|5020|5038|5612|5893|6304|6759|6761|6762|6763|0604|6390)\d+$/,
+                    mirRegExp = /^2/; // 1
+
+                if (visaRegExp.test(savedCardNum.replace(/\D/g,''))) {
+                    savedCardClass = "visa";
+                    savedCardWord = "Visa";
+
+                } else if (mastercardRegExp.test(savedCardNum.replace(/\D/g,''))) {
+                    savedCardClass = "mastercard";
+                    savedCardWord = "MasterCard";
+
+                } else if (maestroRegExp.test(savedCardNum.replace(/\D/g,''))) {
+                    savedCardClass = "maestro";
+                    savedCardWord = "Maestro";
+
+                } else if (mirRegExp.test(savedCardNum.replace(/\D/g,''))) {
+                    savedCardClass = "mir";
+                    savedCardWord = "МИР";
+                }
+            })(savedCardStartNum)
+
             $(this).show().addClass('type-' + savedCardClass);
+            $savedCardNumberDiv.html(savedCardWord + ' **** ' + savedCardLastNum);
         });
-        //
-        $savedCardNumberDiv.html(creditСardSelect.options[creditСardSelect.selectedIndex].text);
-        //
         $cardSaveLabel.html(meta.discountDescription);
     } else {
         // free pay
@@ -290,8 +320,9 @@ $(function(){
         $msgTxt.html(meta.message.ok);
     }
 
-    if (meta.message.error) {
+    if (meta.message.error && meta.message.error != '' && meta.message.error != '{error}') {
         // show error
+        console.log(meta.message.error);
         showErrorMessage();
     }
 
