@@ -121,7 +121,7 @@
         discountAmount: '{DiscountAmount}',
         discountDescription: '{DiscountDescription}',
         noDiscountDescription: 'Сохранить данные банковской карты для следующих покупок',
-        allowAddCard: '{AllowAddToCard}',
+        allowAddCard: '{AllowAddCard}',
         redirectUrl: '{TimerRedirectUrl}' //'http://mapp.kassa.rambler.ru/order/error?code=timeout&message=Время для оплаты истекло. Начните покупку заново&WidgetID=16857#timeout=true'
     };
 </script>
